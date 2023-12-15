@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        .qq{
+            background-color: rgb(89, 167, 89);
+            width:200px;
+            margin-left:20px;
+        }
+        .qq>a{
+            font-size: 30px;
+            color:red;
+        }
+        img{
+            width: 200px;
+        }
+        .cont1{
+            display: grid;;
+            grid-template-columns:repeat(3,1fr);
+            gap:20px;
+        }
+        .cont1>div{
+            margin:30px;
+            text-align: center;
+        }
+</style>
+<body>
+    <div class="qq">
+        <h1>E-Commerce-store</h1>
+         <a href="./program1.html">Home</a>
+         <a href="./carty.html">Cart</a>
+       </div>
+       <div class="cont1">
+       </div>
+</body>
+</html>
+<script>
+    let m=document.querySelector(".cont1")
+   let ls_data=localStorage.getItem("cart");
+     if(ls_data==null){
+        ls_data=[]
+     }else{
+        ls_data=JSON.parse(ls_data);
+     }
+     display(ls_data);
+     function display(data){
+       m.innerHTML=null;
+    for(let i=0;i<data.length;i++){
+    let k=document.createElement("div");
+    let img=document.createElement("img");
+    img.src=data[i]["img"];
+    let name=document.createElement("h2");
+    name.innerText=data[i].brand;
+    let price=document.createElement("p");
+    price.innerText=data[i].price;
+        if(data[i]["price"]>1000){
+            price.style.color="red";
+        }
+    let add_to_cart=document.createElement("button");
+    add_to_cart.innerText="delete";
+        add_to_cart.addEventListener("click",(e)=>{
+         ls_data=ls_data.filter((a,b)=>{
+           if(i===b){
+            return false;
+           }else{
+            return true;
+           }
+        });
+        localStorage.setItem("cart",JSON.stringify(ls_data));
+        display(ls_data);
+        });
+    k.append(img,name,price,add_to_cart)
+    m.append(k);
+  }
+   }
+</script>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select{
+            margin:20px;
+            width:300px;
+            height:40px;
+            font-size: 20px;
+        }
+        select>option{
+            font-size:20px;
+        }
+        img{
+            width:200px;
+        }
+        .cont{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:30px;
+            margin:20px
+        }
+        .cont>div{
+            background-color:teal;
+            width:200px;
+            text-align: center;
+            height:380px;
+        }
+        .qq{
+            width:200px;
+            background-color: rgb(89, 167, 89);
+            margin-left:20px;
+        }
+        .qq>a{
+            font-size: 30px;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+       <div class="qq">
+        <h1>E-Commerce-store</h1>
+         <a href="./program1.html">Home</a>
+         <a href="./carty.html">Cart</a>
+       </div>
+      <select name="" id="ss">
+        <option value="">select-brand</option>
+        <option value="nike">nike</option>
+        <option value="puma">puma</option>
+        <option value="bata">bata</option>
+        <option value="rolex">rolex</option>
+      </select>
+    <div class="cont">
+    </div>
+</body>
+</html>
+<script>
+    let arr=[  
+   {brand:"puma",
+     name:"shoes",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"addidas",
+     name:"shoes",
+     price:500,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"rolex",
+     name:"shoes",
+     price:50,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"rolex",
+     name:"shoes",
+     price:5,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"rolex",
+     name:"shoes",
+     price:2000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"nike",
+     name:"shoes",
+     price:50000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"zebronic",
+     name:"shoes",
+     price:500,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"rolex",
+     name:"shoes",
+     price:1000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"rolex",
+     name:"shoes",
+     price:2000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"rolex",
+     name:"shoes",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"rolex",
+     name:"shoes",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"nike",
+     name:"shoes",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"zoro",
+     name:"shoes",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"aadradhya",
+     name:"shoes",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+   {brand:"ahaaaa",
+     name:"shoes",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+{brand:"sata",
+     name:"shoes",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+{brand:"nata",
+     name:"attire",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+{brand:"chata",
+     name:"attire",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+{brand:"chata",
+     name:"attire",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+{brand:"chata",
+     name:"attire",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+},
+{brand:"bata",
+     name:"attire",
+     price:5000,
+     size:"x,xx,xxx",
+     product_Id:"women1",
+     category:"casual",
+     img:"https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/f/i/x/-original-imagfywbuenspqur-bb.jpeg?q=90"
+}
+];
+  let m=document.querySelector(".cont");
+  let h=document.querySelector("#ss");
+     let ls_data=localStorage.getItem("cart");
+     if(ls_data==null){
+        ls_data=[]
+     }else{
+        ls_data=JSON.parse(ls_data);
+     }
+     h.addEventListener("change",(e)=>{
+        if(h.value===""){
+            display(arr);
+        }else{
+        let filt=arr.filter((a,b)=>{
+            if(a["brand"]===h.value){
+                return true
+            }else{
+                return false;
+            }
+        });
+        display(filt);
+    }
+     })   
+    display(arr);
+   function display(data){
+       m.innerHTML=null;
+    for(let i=0;i<data.length;i++){
+    let k=document.createElement("div");
+    let img=document.createElement("img");
+    img.src=data[i]["img"];
+    let name=document.createElement("h2");
+    name.innerText=data[i].brand;
+    let price=document.createElement("p");
+    price.innerText=data[i].price;
+        if(data[i]["price"]>1000){
+            price.style.color="red";
+        }
+    let add_to_cart=document.createElement("button");
+    add_to_cart.innerText="add_to_cart";
+        add_to_cart.addEventListener("click",(e)=>{
+            ls_data.push(data[i]);
+         localStorage.setItem("cart",JSON.stringify(ls_data));
+        })
+    k.append(img,name,price,add_to_cart)
+    m.append(k);
+  }
+   }
+</script>
