@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database</title>
+    <link rel="stylesheet" href="commonStyles.css" />
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmark.html">Bookmarks</a></div>
+    </div>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Job applied</th>
+            <th>Salary expected</th>
+            <th>Add to bookmark</th>
+          </tr>
+        </thead>
+        <tbody id="body">
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+      let lsdata=localStorage.getItem("data");
+    if(lsdata==null){
+      lsdata=[]
+    }else{
+       lsdata=JSON.parse(lsdata);
+    }
+    let bd=localStorage.getItem("rr");
+    if(bd==null){
+         bd=[]
+    }else{
+      bd=JSON.parse(bd);
+    }
+    let f=document.getElementById("body");
+    display(lsdata);
+    function display(data){
+      f.innerHTML=null;
+      for(let i=0;i<data.length;i++){
+      let k=document.createElement("tr");
+      let td1=document.createElement("td")
+      let td2=document.createElement("td")
+      let td3=document.createElement("td")
+      let td4=document.createElement("td");
+      let td5=document.createElement("td");
+      td1.innerText=data[i]["name"]
+      td2.innerText=data[i]["email"];
+      td3.innerText=data[i]["role"];
+      td4.innerText=data[i]["salary"]; 
+      td5.innerText="BookMark";
+         td5.addEventListener("click",(e)=>{
+          bd.push(data[i]);
+          localStorage.setItem("rr",JSON.stringify(bd));
+         })
+      k.append(td1,td2,td3,td4,td5);
+      f.append(k);  
+      }
+    }
+    //you need to code here
+  </script>
+</html>
