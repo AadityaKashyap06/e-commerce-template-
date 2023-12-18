@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #nav{
+            border: 2px solid green;
+            text-align: center;
+            border-radius: 200px;
+        }
+        #nav>div{
+            display: flex;
+            justify-content: space-around;
+            border-radius:100px;
+        }
+</style>
+<body>
+    <div id="nav">
+        <h1>Masai task List</h1>
+        <div>
+        <a href="./Home.html">Home</a>
+        <a href="./dashboard.html">dashboard</a>
+        <a href="./In_progress.html">IN-Progress</a>
+        <a href="./Done.html">Done</a>
+    </div>
+    </div>
+    <h1>DoneTask</h1>
+    <table border="2px">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Des</th>
+                <th>Start_Date</th>
+                <th>End Date</th>
+                <th>Priority</th>
+            </tr>
+        </thead>
+        <tbody id="oo">
+
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+     let done=JSON.parse(localStorage.getItem("xx"))||[];
+    let body=document.getElementById("oo");
+    data(done);
+    function data(d){
+        body.innerHTML=null;
+    for(let i=0;i<d.length;i++){
+        let s=document.createElement("tr");
+        let des=document.createElement("td");
+        let start=document.createElement("td");
+        let End=document.createElement("td");
+        let task=document.createElement("td");
+        let prio=document.createElement("td");
+           task.innerText=d[i].task;
+           des.innerText=d[i].des;
+             End.innerText=d[i].End;
+           start.innerText=d[i].start;
+           prio.innerText=d[i].sel;
+      s.append(task,des,start,End,prio);
+      body.append(s);
+      
+    }
+}
+</script>

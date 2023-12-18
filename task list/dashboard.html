@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #nav{
+            border: 2px solid green;
+            text-align: center;
+            border-radius: 200px;
+        }
+        #nav>div{
+            display: flex;
+            justify-content: space-around;
+            border-radius:100px;
+        }
+</style>
+<body>
+    <select name="" id="ll">
+        <option value="">Sekect Priority</option>
+        <option value="high">high</option>
+        <option value="medium">medium</option>
+        <option value="low">low</option>
+        <option value="none">none</option>
+    </select>
+    <div id="nav">
+        <h1>Masai task List</h1>
+        <div>
+        <a href="./Home.html">Home</a>
+        <a href="./dashboard.html">dashboard</a>
+        <a href="./In_progress.html">IN-Progress</a>
+        <a href="./Done.html">Done</a>
+    </div>
+    </div>
+    <h1 id="ee">TaskN0-</h1>
+      <table border="2px">
+        <thead>
+            <tr>
+                <td>Task_Name</td>
+                <td>Description</td>
+                <td>Start</td>
+                <td>End</td>
+                <td>priority</td>
+                  <td>Add</td>
+            </tr>
+        </thead>
+        <tbody id="oo"> 
+    <!-- code here:-- -->
+        </tbody>
+      </table>
+</body>
+</html>
+<script>
+      let h=document.getElementById("ee");
+    let a=JSON.parse(localStorage.getItem("det"))||[];
+    let y=JSON.parse(localStorage.getItem("ii"))||[];
+    let body=document.getElementById("oo");
+      let w=document.getElementById("ll");
+      w.addEventListener("change",(e)=>{
+        if(w.value===""){
+            data(a)
+        }else{
+            let filt=a.filter((a,b)=>{
+            if(a["sel"]===w.value){
+                return true
+            }else{
+                return false;
+            }
+        })
+        data(filt);
+        }
+      });
+    data(a);
+    function data(d){
+        body.innerHTML=null;
+    for(let i=0;i<d.length;i++){
+        let s=document.createElement("tr");
+        let des=document.createElement("td");
+        let start=document.createElement("td");
+        let End=document.createElement("td");
+        let task=document.createElement("td");
+        let prio=document.createElement("td");
+        let button=document.createElement("button");
+           task.innerText=d[i].task;
+           des.innerText=d[i].des;
+             End.innerText=d[i].End;
+           start.innerText=d[i].start;
+           prio.innerText=d[i].sel;
+           button.innerText="add";
+           button.addEventListener("click",(e)=>{
+               y.push(d[i]);
+            localStorage.setItem("ii",JSON.stringify(y));
+                d=d.filter((a,b)=>{
+                    if(b!==i){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                })
+                localStorage.setItem("det",JSON.stringify(d));
+                data(d);
+                let h=document.getElementById("ee");
+    h.innerText="Task_No:- "+a.length;
+           });
+      s.append(task,des,start,End,prio,button);
+      body.append(s);
+      
+    }
+}
+    h.innerText="Task_No:- "+a.length;
+</script>
